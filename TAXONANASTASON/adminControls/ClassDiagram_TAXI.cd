@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TAXONANASTASON.Models.ADDRESS">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\ADDRESS.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Street" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TAXONANASTASON.Models.CAR">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACQAAAAAAAAAAAAAAABAAAAAAAoBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CAR.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CarModel" />
+      <Property Name="Tarif" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TAXONANASTASON.Models.CAR_MODEL">
+    <Position X="7.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Models\CAR_MODEL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TAXONANASTASON.Models.CLIENT">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAEAAAAAAAAAAAAgAAAAABAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\CLIENT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TAXONANASTASON.Models.DRIVER">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAEAMAAQAAAAAAAgAAACABAIAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\DRIVER.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Car" />
+      <Property Name="Status" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TAXONANASTASON.Models.DRIVER_STATUS">
+    <Position X="4.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DRIVER_STATUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TAXONANASTASON.Models.STREET">
+    <Position X="6.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\STREET.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TAXONANASTASON.Models.TARIF">
+    <Position X="9" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\TARIF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TAXONANASTASON.Models.TRIP">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACQAAMAAACABAAgBQAAAAAAQAAgAFAAAAAgEAAAAQ=</HashCode>
+      <FileName>Models\TRIP.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Status" />
+      <Property Name="ToAddress" />
+      <Property Name="FromAddress" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TAXONANASTASON.Models.TRIP_STATUS">
+    <Position X="11" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TRIP_STATUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TAXONANASTASON.Models.USER">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAABAAkAAAAAAAAAAAgAACAAAQAAAAAAQ=</HashCode>
+      <FileName>Models\USER.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Client" />
+      <Property Name="Driver" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="TAXONANASTASON.adminControls.users"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TAXONANASTASON.adminControls"
+              mc:Ignorable="d" 
+             FontFamily="Century Gothic" Name="AllUsers" Loaded="AllUsers_Loaded"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#f0bd48">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="0.6*"/>
+
+            <ColumnDefinition Width="10"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Button Name="AllDrivers" Click="AllDrivers_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#504d49" Foreground="White" BorderBrush="#707870" Content="ВОДИТЕЛИ" Width="195" Height="40" Grid.RowSpan="2" />
+            <Button Name="AllClients" Click="AllClients_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#504d49" Foreground="White" BorderBrush="#707870" Content="КЛИЕНТЫ" Width="195" Height="40"/>
+
+        </StackPanel>
+
+
+
+        <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,20,90,50" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16*"/>
+                <ColumnDefinition Width="19*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button HorizontalAlignment="Center" Name="XMLParse" Click="XMLParse_Click" VerticalAlignment="Bottom" Content="XML" Margin="129,0,131,-53"></Button>
+            <Button HorizontalAlignment="Center" Name="XMLExport" Click="XMLExport_Click" VerticalAlignment="Bottom" Content="EX" Margin="231,0,29,-53"></Button>
+
+            <DataGrid Background="#E1d3c1" Name="DataGridDrivers"  AutoGenerateColumns="False"   Visibility="Hidden"  ColumnWidth="auto" Opacity="0.7"  CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True" Grid.ColumnSpan="2">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Id}" Header="№"  />
+                        <DataGridTextColumn Binding="{Binding Surname}" Header="Фамилия" />
+                        <DataGridTextColumn Binding="{Binding Firstname}" Header="Имя"  />
+                        <DataGridTextColumn Binding="{Binding Fathersname}" Header="Отчество"  />
+                        <DataGridTextColumn Binding="{Binding Phone}" Header="Телефон"  />
+                        <!--<DataGridTextColumn Binding="{Binding Status.Status}" Header="Статус"  />-->
+                        <DataGridTextColumn Binding="{Binding Car.TypeModel}" Header="Машина"  />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <DataGrid Background="#E1d3c1" Name="DataGridClients"  AutoGenerateColumns="False"   Visibility="Hidden"  ColumnWidth="auto" Opacity="0.7"  CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True" Grid.ColumnSpan="2">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Id}" Header="№"  />
+                        <DataGridTextColumn Binding="{Binding Surname}" Header="Фамилия" />
+                        <DataGridTextColumn Binding="{Binding Firstname}" Header="Имя"  />
+                        <DataGridTextColumn Binding="{Binding Phone}" Header="Телефон"  />
+                        <DataGridTextColumn Binding="{Binding Card}" Header="Карта"  />
+                    </DataGrid.Columns>
+                </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>

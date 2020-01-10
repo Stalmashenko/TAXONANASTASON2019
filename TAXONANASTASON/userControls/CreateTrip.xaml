@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="TAXONANASTASON.userControls.CreateTrip"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TAXONANASTASON.userControls"
+             mc:Ignorable="d"  Name="AddTrip" Loaded="AddTrip_Loaded"
+             FontFamily="Century Gothic"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid  Background="#f0bd48">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3">
+            <Button Name="Comfort"  Click="Comfort_Click" Background="#504d49" Content="КОМФОРТ" Width="200" Height="45" HorizontalAlignment="Left"></Button>
+            <Button Name="Standart" Click="Standart_Click" Background="#504d49" Content="СТАНДАРТ" Width="200" Height="45" HorizontalAlignment="Center"></Button>
+            <Button Name="Elite" Click="Elite_Click" Background="#504d49" Content="ЭЛИТ" Width="200" Height="45" HorizontalAlignment="Right" ></Button>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="0,30">
+                <TextBlock Text="ВОДИТЕЛЬ:" Foreground="#504d49" FontWeight="UltraBold"  FontSize="20" FontStyle="Italic"></TextBlock >
+                <TextBox Name="DriverSurname" materialDesign:HintAssist.Hint="ФАМИЛИЯ " FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+                <TextBox Name="DriverFirstname" materialDesign:HintAssist.Hint="ИМЯ " FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+                <TextBlock Text="МАШИНА:" Foreground="#504d49" FontWeight="UltraBold"  FontSize="20" FontStyle="Italic"></TextBlock >
+                <TextBox Name="FirmCar" materialDesign:HintAssist.Hint="ФИРМА МАШИНЫ" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+                <TextBox Name="ModelCar" materialDesign:HintAssist.Hint="МОДЕЛЬ МАШИНЫ" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+                <Button Name="OrderTrip" Click="OrderTrip_Click" Background="#504d49" Content="ЗАКАЗАТЬ" Width="200" Height="45"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,50"></Button>
+
+            </StackPanel>
+            
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="3">
+            <StackPanel  Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="0,30">
+                <TextBlock Text="ОТКУДА:" Foreground="#504d49" FontWeight="UltraBold"  FontSize="20" FontStyle="Italic"></TextBlock >
+                <TextBlock Text="УЛИЦА" Foreground="#504d49" FontSize="16"></TextBlock >
+                <ComboBox  Name="FromStreet" materialDesign:HintAssist.Hint="УЛИЦА" FontSize="16" Margin="0,9,0,9" IsReadOnly="False" />
+                <ComboBox materialDesign:HintAssist.Hint="№ ДОМА" FontSize="16" Name="FromHouse" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+
+                <TextBlock Text="КУДА:" Foreground="#504d49" FontWeight="UltraBold"  FontSize="20" FontStyle="Italic"></TextBlock >
+                <TextBlock Text="УЛИЦА" Foreground="#504d49" FontSize="16"></TextBlock >
+                <ComboBox  Name="ToStreet" materialDesign:HintAssist.Hint="УЛИЦА" FontSize="16" Margin="0,9,0,9" IsReadOnly="False" />
+                <ComboBox materialDesign:HintAssist.Hint="№ ДОМА" FontSize="16" Name="ToHouse" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+                <TextBox Name="Sum" materialDesign:HintAssist.Hint="СУММА " FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>

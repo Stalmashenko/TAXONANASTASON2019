@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="TAXONANASTASON.adminControls.CheckInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TAXONANASTASON.adminControls"
+             mc:Ignorable="d" 
+             FontFamily="Century Gothic" Name="Information" Loaded="Information_Loaded"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#f0bd48">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="0.6*"/>
+
+            <ColumnDefinition Width="10"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Button Name="AllTrip" Click="AllTrip_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#504d49" Foreground="White" BorderBrush="#707870" Content="ВСЕ ПОЕЗДКИ" Width="195" Height="40"  />
+            <Button Name="CurrentTrip" Click="CurrentTrip_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#504d49" Foreground="White" BorderBrush="#707870" Content="ТЕКУЩИЕ ПОЕЗДКИ" Width="195" Height="40" Grid.RowSpan="2" />
+        </StackPanel>
+
+
+
+        <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,20,90,50" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Name="AllScroll" Visibility="Hidden">
+                <DataGrid Background="#E1d3c1" Name="DataGridAllTrip"  AutoGenerateColumns="False"   Visibility="Hidden"  ColumnWidth="auto" Opacity="0.7"  CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True" Grid.ColumnSpan="2">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Id}" Header="№"  />
+                        <DataGridTextColumn Binding="{Binding StartDate}" Header="Начало поездки"  />
+                        <DataGridTextColumn Binding="{Binding ToAddress.Street.Street}" Header="Откуда"  />
+                        <DataGridTextColumn Binding="{Binding FromAddress.Street.Street}" Header="Куда"  />
+                        <DataGridTextColumn Binding="{Binding Driver.Surname}" Header="Водитель"  />
+                        <DataGridTextColumn Binding="{Binding Client.Surname}" Header="Клиент"  />
+                        <DataGridTextColumn Binding="{Binding FinishDate}" Header="Конец поездки"  />
+                        <DataGridTextColumn Binding="{Binding Tarif}" Header="Тариф" />
+                        <DataGridTextColumn Binding="{Binding Summa}" Header="Сумма" />
+                        <DataGridTextColumn Binding="{Binding Distance}" Header="Расстояние"  />
+                        <DataGridTextColumn Binding="{Binding Rating}" Header="Оценка" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
+
+            <DataGrid Background="#E1d3c1" Name="DataGridCurrentTrip"  AutoGenerateColumns="False"   Visibility="Hidden"  ColumnWidth="auto" Opacity="0.7"  CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Id}" Header="№"  />
+                    <DataGridTextColumn Binding="{Binding StartDate}" Header="Начало поездки"  />
+                    <DataGridTextColumn Binding="{Binding Tarif}" Header="Тариф" />
+                    <DataGridTextColumn Binding="{Binding ToAddress.Street.Street}" Header="Откуда"  />
+                    <DataGridTextColumn Binding="{Binding FromAddress.Street.Street}" Header="Куда"  />
+                    <DataGridTextColumn Binding="{Binding Driver.Surname}" Header="Водитель"  />
+                    <DataGridTextColumn Binding="{Binding Client.Surname}" Header="Клиент"  />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>
